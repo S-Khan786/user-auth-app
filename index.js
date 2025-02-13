@@ -7,7 +7,10 @@ const authRoutes = require('./routes/authRoutes');
 
 const db = require('./config/mongoose.js');
 
+
 dotenv.config();
+
+// console.log(process.env.PORT);
 
 const app = express();
 
@@ -20,5 +23,5 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
